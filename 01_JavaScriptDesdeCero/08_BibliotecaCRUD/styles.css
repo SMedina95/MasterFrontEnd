@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding: 30px 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #2a5298;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #1e3c72;
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* Formulario */
+.formulario {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 30px;
+    border: 1px solid #e9ecef;
+}
+
+.formulario h2 {
+    color: #1e3c72;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 1em;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2a5298;
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Botones */
+.btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 82, 152, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* Lista de libros */
+.libros-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.libros-header h2 {
+    color: #333;
+    font-size: 1.2em;
+}
+
+.contador {
+    color: #2a5298;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.buscador {
+    padding: 8px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9em;
+    min-width: 240px;
+    transition: border-color 0.3s ease;
+}
+
+.buscador:focus {
+    outline: none;
+    border-color: #2a5298;
+}
+
+.lista-libros {
+    display: grid;
+    gap: 15px;
+}
+
+.libro-card {
+    background: #f8f9fa;
+    border-left: 5px solid #2a5298;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    animation: aparecer 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.libro-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.libro-card[data-estado="prestado"] {
+    border-left-color: #fd7e14;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.libro-info {
+    flex: 1;
+}
+
+.libro-titulo {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #1e3c72;
+    margin-bottom: 4px;
+}
+
+.libro-detalles {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.libro-estado {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.libro-estado.disponible {
+    background: #d4edda;
+    color: #155724;
+}
+
+.libro-estado.prestado {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.libro-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-accion {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-capitulos {
+    background: #e7f1ff;
+    color: #2a5298;
+}
+
+.btn-capitulos:hover {
+    background: #2a5298;
+    color: white;
+}
+
+.btn-editar {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.btn-editar:hover {
+    background: #ffc107;
+    color: white;
+}
+
+.btn-eliminar {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.btn-eliminar:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.sin-libros {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #e0e0e0;
+}
+
+/* Modal de capítulos */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    color: #1e3c72;
+    font-size: 1.1em;
+}
+
+.btn-cerrar {
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #999;
+    padding: 5px;
+}
+
+.btn-cerrar:hover {
+    color: #dc3545;
+}
+
+.form-capitulo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-capitulo input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95em;
+}
+
+.form-capitulo input:focus {
+    outline: none;
+    border-color: #2a5298;
+}
+
+.lista-capitulos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.capitulo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #2a5298;
+    font-size: 0.95em;
+}
+
+.btn-eliminar-capitulo {
+    background: transparent;
+    border: none;
+    color: #dc3545;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.btn-eliminar-capitulo:hover {
+    background: #ffe5e5;
+}
+
+.sin-capitulos {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .libro-card {
+        flex-direction: column;
+    }
+
+    .libro-acciones {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .btn-accion {
+        flex: 1;
+    }
+}
