@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 01: Planificador de Viajes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 { color: #333; margin-bottom: 10px; }
+        .descripcion { color: #666; margin-bottom: 20px; }
+        h2 { margin: 20px 0 10px; color: #444; font-size: 1.1em; }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Volver al inicio</a>
+        <h1>✈️ Planificador de Viajes (ES6+)</h1>
+        <p class="descripcion">Refactorización del código original con módulos, funciones de flecha y <code>let/const</code>.</p>
+
+        <h2>Salida en consola:</h2>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        // Redirigimos console.log al elemento <pre>
+        const output = document.getElementById('output');
+        const originalLog = console.log;
+        console.log = function(...args) {
+            output.textContent += args.join(' ') + '\n';
+            originalLog.apply(console, args);
+        };
+    </script>
+
+    <!-- Cargamos el módulo principal con type="module" -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
