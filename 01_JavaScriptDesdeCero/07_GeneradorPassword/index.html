@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 07: Generador de Contraseñas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Volver al inicio</a>
+
+        <h1 class="titulo">Password Generator</h1>
+
+        <!-- Resultado de la contraseña -->
+        <div class="resultado">
+            <input
+                type="text"
+                id="passwordOutput"
+                class="password-output"
+                placeholder="P4$5W0rD!"
+                readonly
+            />
+            <button id="btnCopiar" class="btn-copiar" title="Copiar contraseña">
+                📋
+            </button>
+        </div>
+
+        <!-- Opciones -->
+        <div class="opciones">
+            <!-- Longitud -->
+            <div class="opcion-longitud">
+                <div class="longitud-header">
+                    <label for="longitud">Character Length</label>
+                    <span id="valorLongitud" class="valor-longitud">10</span>
+                </div>
+                <input
+                    type="range"
+                    id="longitud"
+                    min="4"
+                    max="30"
+                    value="10"
+                    class="slider"
+                />
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="checkboxes">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="incluirMayusculas" checked />
+                    <span>Include Uppercase Letters</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="incluirMinusculas" checked />
+                    <span>Include Lowercase Letters</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="incluirNumeros" checked />
+                    <span>Include Numbers</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="incluirSimbolos" />
+                    <span>Include Symbols</span>
+                </label>
+            </div>
+
+            <!-- Indicador de fuerza -->
+            <div class="fuerza">
+                <span class="fuerza-texto">STRENGTH</span>
+                <div class="fuerza-indicador">
+                    <span id="fuerzaLabel" class="fuerza-label">MEDIUM</span>
+                    <div class="fuerza-barras">
+                        <div class="barra" id="barra1"></div>
+                        <div class="barra" id="barra2"></div>
+                        <div class="barra" id="barra3"></div>
+                        <div class="barra" id="barra4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón Generar -->
+            <button id="btnGenerar" class="btn-generar">GENERATE →</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f0f14;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #e6e5ea;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #a4ffaf;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.titulo {
+    text-align: center;
+    color: #817d92;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Resultado */
+.resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #24232c;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+}
+
+.password-output {
+    background: transparent;
+    border: none;
+    color: #e6e5ea;
+    font-size: 1.5em;
+    font-weight: 700;
+    width: 100%;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.password-output::placeholder {
+    color: #4a4956;
+}
+
+.btn-copiar {
+    background: transparent;
+    border: none;
+    color: #a4ffaf;
+    font-size: 1.3em;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.btn-copiar:hover {
+    transform: scale(1.15);
+}
+
+.btn-copiar.copiado {
+    color: #e6e5ea;
+}
+
+/* Opciones */
+.opciones {
+    background: #24232c;
+    padding: 24px;
+}
+
+/* Longitud */
+.opcion-longitud {
+    margin-bottom: 24px;
+}
+
+.longitud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.longitud-header label {
+    font-size: 0.95em;
+    color: #e6e5ea;
+}
+
+.valor-longitud {
+    color: #a4ffaf;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #18171f;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #e6e5ea;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: #a4ffaf;
+    border: 2px solid #e6e5ea;
+}
+
+.slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: #e6e5ea;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Checkboxes */
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    color: #e6e5ea;
+    font-size: 0.95em;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e6e5ea;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background: #a4ffaf;
+    border-color: #a4ffaf;
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: "✔";
+    color: #18171f;
+    font-size: 0.85em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Fuerza */
+.fuerza {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #18171f;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.fuerza-texto {
+    color: #817d92;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.fuerza-indicador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.fuerza-label {
+    color: #e6e5ea;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.fuerza-barras {
+    display: flex;
+    gap: 5px;
+}
+
+.barra {
+    width: 8px;
+    height: 24px;
+    border: 2px solid #e6e5ea;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Estados de fuerza */
+.fuerza[data-nivel="1"] .barra:nth-child(1) { background: #f64a4a; border-color: #f64a4a; }
+.fuerza[data-nivel="2"] .barra:nth-child(1),
+.fuerza[data-nivel="2"] .barra:nth-child(2) { background: #fb7c58; border-color: #fb7c58; }
+.fuerza[data-nivel="3"] .barra:nth-child(1),
+.fuerza[data-nivel="3"] .barra:nth-child(2),
+.fuerza[data-nivel="3"] .barra:nth-child(3) { background: #f8cd65; border-color: #f8cd65; }
+.fuerza[data-nivel="4"] .barra { background: #a4ffaf; border-color: #a4ffaf; }
+
+/* Botón Generar */
+.btn-generar {
+    width: 100%;
+    padding: 18px;
+    background: #a4ffaf;
+    border: 2px solid #a4ffaf;
+    color: #24232c;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-generar:hover {
+    background: transparent;
+    color: #a4ffaf;
+}
+
+.btn-generar:active {
+    transform: scale(0.98);
+}

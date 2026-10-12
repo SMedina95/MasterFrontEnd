@@ -56,11 +56,3 @@ Abre el archivo `index.html` con tu navegador (doble clic o clic derecho → "Ab
 
 Gracias a este reto, comprendí cómo manipular el DOM de forma dinámica: crear elementos, agregarlos a la página y eliminarlos. También reforcé el manejo de eventos de formularios con `addEventListener` y `event.preventDefault()`, y aprendí a usar `dataset` para asociar información a los elementos. Es un ejemplo muy claro de cómo JavaScript puede hacer que una página web sea interactiva.
 
-## 👤 Autor
-
-**Sergio Medina**
-- GitHub: [@SMedina95](https://github.com/SMedina95)
-
-## 📅 Fecha
-
-Octubre 2025
