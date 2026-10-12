@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 06: Caja de Comentarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Volver al inicio</a>
+
+        <header>
+            <h1>💬 Caja de Comentarios</h1>
+            <p class="subtitulo">Escribe un comentario y aparecerá debajo del formulario.</p>
+        </header>
+
+        <!-- FORMULARIO -->
+        <form id="formularioComentario" class="formulario">
+            <textarea id="comentario" placeholder="Escribe tu comentario aquí..." rows="3" required></textarea>
+            <button type="submit" class="btn-agregar">📩 Agregar Comentario</button>
+        </form>
+
+        <!-- CONTENEDOR DE COMENTARIOS (DEBE ESTAR FUERA DEL FORM) -->
+        <div class="comentarios-section">
+            <h2>Comentarios <span id="contador" class="contador">(0)</span></h2>
+            <div id="listaComentarios" class="lista-comentarios">
+                <!-- Aquí se agregarán los comentarios -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
