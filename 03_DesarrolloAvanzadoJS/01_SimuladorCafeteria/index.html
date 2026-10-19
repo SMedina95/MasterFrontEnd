@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 01: Simulador de Pedidos - Cafetería</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Volver al inicio</a>
+
+        <header>
+            <h1>☕ Cafetería: Simulador de Pedidos</h1>
+            <p class="subtitulo">Los pedidos se preparan de forma asincrónica. ¡Observa cómo cambian de estado!</p>
+        </header>
+
+        <div class="controles">
+            <button id="addOrderBtn" class="btn-agregar">➕ Agregar Pedido</button>
+            <button id="clearOrdersBtn" class="btn-limpiar">🗑️ Limpiar Pedidos</button>
+        </div>
+
+        <div class="estadisticas">
+            <div class="stat">
+                <span class="stat-label">Pedidos Totales</span>
+                <span id="totalCount" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">En Proceso</span>
+                <span id="pendingCount" class="stat-value pending">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Completados</span>
+                <span id="completedCount" class="stat-value completed">0</span>
+            </div>
+        </div>
+
+        <ul id="orderList" class="order-list"></ul>
+
+        <div id="emptyMessage" class="empty-message">
+            <p>🛒 No hay pedidos aún. ¡Haz clic en "Agregar Pedido" para empezar!</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
