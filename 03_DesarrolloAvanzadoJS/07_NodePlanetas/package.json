@@ -1,0 +1,13 @@
+{
+  "name": "node-planetas",
+  "version": "1.0.0",
+  "description": "Registro de planetas favoritos usando Node.js",
+  "main": "index.js",
+  "scripts": {
+    "explorar": "node index.js",
+    "explorar:rocoso": "node index.js rocoso",
+    "explorar:gaseoso": "node index.js gaseoso"
+  },
+  "keywords": ["node", "planetas", "exploracion"],
+  "license": "MIT"
+}
