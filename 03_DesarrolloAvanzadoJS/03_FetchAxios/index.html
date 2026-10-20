@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 03: Consumo de APIs con Fetch y Axios</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluimos Axios desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Volver al inicio</a>
+
+        <header>
+            <h1>👽 Rick & Morty: Fetch vs Axios</h1>
+            <p class="subtitulo">Compara ambas herramientas para consumir APIs.</p>
+        </header>
+
+        <div class="controles">
+            <button id="fetch-btn" class="btn btn-fetch">🌐 Obtener con Fetch</button>
+            <button id="axios-btn" class="btn btn-axios">⚡ Obtener con Axios</button>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <div id="data-container" class="data-container">
+            <!-- Aquí se mostrarán los personajes -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
