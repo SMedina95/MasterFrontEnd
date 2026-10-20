@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 05: Registro de Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Volver al inicio</a>
+
+        <header>
+            <h1>🎉 Registro de Eventos</h1>
+            <p class="subtitulo">Completa el formulario para registrarte en nuestro próximo evento.</p>
+        </header>
+
+        <form id="registroEvento" novalidate>
+            <!-- Nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" />
+                <span class="error-message" id="error-nombre"></span>
+            </div>
+
+            <!-- Correo -->
+            <div class="form-group">
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" name="correo" placeholder="Ej: juan@example.com" />
+                <span class="error-message" id="error-correo"></span>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form-group">
+                <label for="telefono">Teléfono * (10 dígitos)</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 5512345678" maxlength="10" />
+                <span class="error-message" id="error-telefono"></span>
+            </div>
+
+            <!-- Intereses -->
+            <div class="form-group">
+                <label>Intereses * (selecciona al menos uno)</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="intereses" value="tecnología" />
+                        <span>Tecnología</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="intereses" value="negocios" />
+                        <span>Negocios</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="intereses" value="arte" />
+                        <span>Arte</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="intereses" value="ciencia" />
+                        <span>Ciencia</span>
+                    </label>
+                </div>
+                <span class="error-message" id="error-intereses"></span>
+            </div>
+
+            <!-- Horario -->
+            <div class="form-group">
+                <label>Horario preferido *</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="horario" value="mañana" />
+                        <span>Mañana</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="horario" value="tarde" />
+                        <span>Tarde</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="horario" value="noche" />
+                        <span>Noche</span>
+                    </label>
+                </div>
+                <span class="error-message" id="error-horario"></span>
+            </div>
+
+            <!-- Fecha -->
+            <div class="form-group">
+                <label for="fecha">Fecha del evento * (no puede ser en el pasado)</label>
+                <input type="date" id="fecha" name="fecha" />
+                <span class="error-message" id="error-fecha"></span>
+            </div>
+
+            <!-- Hora -->
+            <div class="form-group">
+                <label for="hora">Hora preferida * (entre 08:00 y 20:00)</label>
+                <input type="time" id="hora" name="hora" />
+                <span class="error-message" id="error-hora"></span>
+            </div>
+
+            <!-- Archivo -->
+            <div class="form-group">
+                <label for="archivo">Documento de identificación (opcional, máx. 2 MB)</label>
+                <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png" />
+                <span class="error-message" id="error-archivo"></span>
+            </div>
+
+            <button type="submit" class="btn-submit">Registrarse</button>
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+            <!-- Aquí se mostrará el mensaje de éxito -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
