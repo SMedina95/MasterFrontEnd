@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Adivina el número</h1>
+        <p class="subtitulo">La computadora ha generado un número entre 1 y 100. ¡Adivínalo!</p>
+
+        <div class="juego">
+            <input type="number" id="numero" placeholder="Ingresa un número" min="1" max="100" />
+            <button id="adivinar">Adivinar</button>
+        </div>
+
+        <p id="mensaje" class="mensaje"></p>
+
+        <div class="intentos">
+            <p>Intentos: <span id="intentos">0</span></p>
+        </div>
+
+        <button id="reiniciar" class="btn-reiniciar hidden">🔄 Jugar de nuevo</button>
+    </div>
+
+    <!-- ✅ CORREGIDO: main.js está dentro de src/ -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
