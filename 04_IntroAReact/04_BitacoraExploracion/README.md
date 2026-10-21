@@ -1,16 +1,36 @@
-# React + Vite
+# Reto 04 (Módulo 04): Bitácora de Exploración
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Descripción
 
-Currently, two official plugins are available:
+Este proyecto es una **Bitácora de Exploración** espacial desarrollada con React. Permite registrar planetas visitados con nombre, descripción e imagen, almacenarlos en `localStorage` y visualizar el ciclo de vida de cada componente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Objetivos
 
-## React Compiler
+- Practicar `useState`, `useEffect`, `useMemo` y `useRef`.
+- Comprender el ciclo de vida de los componentes (montaje y desmontaje).
+- Implementar persistencia de datos con `localStorage`.
+- Manejar listas y filtros en el estado.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+- Registro de planetas con nombre, descripción e imagen.
+- Persistencia de datos en `localStorage`.
+- Visualización de planetas en tarjetas.
+- Búsqueda de planetas por nombre.
+- Eliminación de planetas con confirmación.
+- Simulación de ciclo de vida (mensajes en consola al montar/desmontar).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Conceptos Practicados
+
+- `useState` para el estado.
+- `useEffect` para persistencia y ciclo de vida.
+- `useMemo` para filtrar planetas.
+- `useRef` para limpiar el input de archivo.
+- `localStorage` para persistencia.
+- `URL.createObjectURL()` para previsualizar imágenes.
+
+## ⚙️ Cómo Ejecutar
+
+```bash
+npm install
+npm run dev
