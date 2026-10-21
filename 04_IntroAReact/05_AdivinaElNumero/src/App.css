@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container h1 {
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== JUEGO ========== */
+.game-container {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.game-container h2 {
+    color: #667eea;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.instrucciones {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Input y botón */
+.juego-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-number {
+    flex: 1;
+}
+
+.input-number input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-number input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-number input:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.btn-adivinar {
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-adivinar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Mensajes */
+.message {
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: aparecer 0.3s ease;
+}
+
+.message.hint {
+    background: #fff3e0;
+    color: #fd7e14;
+    border: 2px solid #fd7e14;
+}
+
+.message.success {
+    background: #e8f5e9;
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intentos */
+.intentos {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+.intentos strong {
+    color: #667eea;
+    font-size: 1.2em;
+}
+
+/* Botón reiniciar */
+.btn-reiniciar {
+    width: 100%;
+    padding: 14px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: aparecer 0.5s ease;
+}
+
+.btn-reiniciar:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
