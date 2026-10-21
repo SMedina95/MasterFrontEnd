@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container h1 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== GESTOR DE INVENTARIO ========== */
+.inventory-manager {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.inventory-manager h2 {
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.formulario {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.formulario input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.formulario button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.formulario button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Buscador */
+.buscador-container {
+    margin-bottom: 15px;
+}
+
+.buscador-container input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 0.95em;
+    outline: none;
+}
+
+.buscador-container input:focus {
+    border-color: #667eea;
+}
+
+/* Lista de productos */
+.inventory-manager h3 {
+    color: #444;
+    font-size: 1em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.lista-productos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.producto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    animation: aparecer 0.3s ease;
+    gap: 10px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.producto-nombre {
+    flex: 1;
+    font-weight: 600;
+    color: #333;
+}
+
+.producto-cantidad {
+    background: #667eea;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+.producto-acciones {
+    display: flex;
+    gap: 5px;
+}
+
+.producto-acciones button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-increment {
+    background: #28a745;
+    color: white;
+}
+
+.btn-increment:hover {
+    background: #218838;
+}
+
+.btn-decrement {
+    background: #ffc107;
+    color: #333;
+}
+
+.btn-decrement:hover:not(:disabled) {
+    background: #e0a800;
+}
+
+.btn-decrement:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-remove {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-remove:hover {
+    background: #c82333;
+}
+
+/* Mensajes */
+.lista-vacia {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #e0e0e0;
+    margin-bottom: 15px;
+}
+
+/* Botón vaciar */
+.btn-clear {
+    width: 100%;
+    padding: 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-clear:hover {
+    background: #c82333;
+}
