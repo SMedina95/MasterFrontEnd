@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-links a.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenido */
+.contenido {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.page h1 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.descripcion {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Home */
+.acciones {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.info {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info h3 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+.info ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.info li {
+    padding: 5px 0;
+    color: #555;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 82, 152, 0.4);
+}
+
+.btn-secundario {
+    background: #28a745;
+}
+
+.btn-secundario:hover {
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.btn-volver {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #2a5298;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-volver:hover {
+    text-decoration: underline;
+}
+
+/* Lista de citas */
+.lista-citas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.cita-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #2a5298;
+    transition: transform 0.2s ease;
+}
+
+.cita-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cita-card.estado-confirmada {
+    border-left-color: #28a745;
+}
+
+.cita-card.estado-pendiente {
+    border-left-color: #ffc107;
+}
+
+.cita-card.estado-cancelada {
+    border-left-color: #dc3545;
+}
+
+.cita-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cita-header h3 {
+    color: #1e3c72;
+    font-size: 1.1em;
+}
+
+.cita-card p {
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.badge-confirmada {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-pendiente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-cancelada {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Detalle de cita */
+.detalle-cita {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.detalle-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detalle-item:last-child {
+    border-bottom: none;
+}
+
+.detalle-label {
+    font-weight: 600;
+    color: #1e3c72;
+}
+
+.detalle-valor {
+    color: #555;
+}
+
+/* Formulario nueva cita */
+.formulario-cita {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario-cita input,
+.formulario-cita textarea {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario-cita input:focus,
+.formulario-cita textarea:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+}
+
+.mensaje-exito {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* 404 */
+.not-found {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.not-found h1 {
+    color: #dc3545;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.not-found p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background: #1e3c72;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
