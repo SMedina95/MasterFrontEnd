@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+    min-height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.titulo {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== CONTADOR DE TAREAS ========== */
+.contador-tareas {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.contador-tareas h2 {
+    color: #f12711;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.formulario {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.formulario input[type="text"] {
+    flex: 2;
+    min-width: 150px;
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input[type="number"] {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input:focus {
+    border-color: #f12711;
+    box-shadow: 0 0 0 3px rgba(241, 39, 17, 0.1);
+}
+
+.formulario button {
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.formulario button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(241, 39, 17, 0.4);
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.filtros button {
+    padding: 5px 12px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filtros button:hover {
+    background: #ffe5e0;
+}
+
+.filtros button.activo {
+    background: #f12711;
+    color: white;
+    border-color: #f12711;
+}
+
+/* Lista de tareas */
+.lista-tareas {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.tarea-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #f12711;
+    border-radius: 8px;
+    animation: aparecer 0.3s ease;
+    gap: 10px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tarea-nombre {
+    flex: 1;
+    font-weight: 500;
+    color: #333;
+}
+
+.tarea-duracion {
+    color: #f12711;
+    font-weight: 700;
+    font-size: 0.9em;
+    background: #ffe5e0;
+    padding: 3px 10px;
+    border-radius: 15px;
+}
+
+.btn-eliminar {
+    background: transparent;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.btn-eliminar:hover {
+    background: #ffe5e5;
+}
+
+/* Mensajes */
+.lista-vacia {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #e0e0e0;
+    margin-bottom: 15px;
+}
+
+/* Total */
+.total {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe5e0 100%);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.total h3 {
+    color: #f12711;
+    font-size: 1.2em;
+}
+
+.equivalencia {
+    color: #888;
+    font-size: 0.85em;
+    margin-top: 4px;
+}
+
+/* Botón limpiar */
+.btn-limpiar {
+    width: 100%;
+    padding: 10px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-limpiar:hover {
+    background: #c82333;
+}
